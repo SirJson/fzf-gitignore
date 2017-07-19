@@ -16,8 +16,7 @@ USER_AGENT = 'fzf-gitignore/{} (https://github.com/fszymanski/fzf-gitignore)'.fo
 
 
 @neovim.plugin
-class FzfGitignorePlugin():
-
+class FzfGitignore():
     def __init__(self, nvim):
         self.__cache = None
         self.__nvim = nvim
