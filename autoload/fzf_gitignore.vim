@@ -27,7 +27,7 @@ function! fzf_gitignore#run() abort
     let opts = {
           \ 'source': _fzf_gitignore_supported_templates(),
           \ 'sink*': function('s:templates_sink'),
-          \ 'options': '-m --prompt="Templates> "'
+          \ 'options': '-m --prompt="Template> " --header="gitignore.io"'
           \ }
   catch /^Vim(return):/
     return
