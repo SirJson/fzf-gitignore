@@ -18,7 +18,7 @@ INTRODUCTION                                      *fzf-gitignore-introduction*
 
 fzf[1] interface for creating .gitignore files using the gitignore.io[2] API.
 
-Note: Inspired by helm-gitignore[3].
+Note: This plugin was inspired by helm-gitignore[3].
 
 ==============================================================================
 CONFIGURATION                                    *fzf-gitignore-configuration*
