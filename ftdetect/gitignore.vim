@@ -4,7 +4,7 @@ scriptencoding utf-8
 " Use of this source code is governed by an MIT license that can be
 " found in the LICENSE file.
 
-" https://git-scm.com/docs/gitignore
+" https://git-scm.com/docs/gitignore#_description
 autocmd BufNewFile,BufRead */.config/git/ignore,*.git/info/exclude,.gitignore
       \ set filetype=gitignore
 
