@@ -14,7 +14,7 @@ syntax match gitignoreComment '^#.*' contains=gitignoreTodo
 syntax match gitignoreComment '\s#.*'ms=s+1 contains=gitignoreTodo
 syntax match gitignoreNegation '^!'
 syntax match gitignoreSeparator '/'
-syntax match gitignoreWildcard '[*?]'
+syntax match gitignoreWildcard '\(\\\)\@<![*?]'
 syntax region gitignoreSet start='\[' skip='\\\]' end='\]'
 
 highlight default link gitignoreTodo Todo
