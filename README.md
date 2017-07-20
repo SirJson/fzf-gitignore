@@ -3,7 +3,7 @@
 [fzf](https://github.com/junegunn/fzf) interface for creating `.gitignore` files using the [gitignore.io](https://www.gitignore.io/) API.
 This plugin was inspired by [helm-gitignore](https://github.com/jupl/helm-gitignore).
 
-![](https://user-images.githubusercontent.com/25827968/28416293-ba0c98d8-6d53-11e7-8ff8-fe1420f55925.png)
+![](https://user-images.githubusercontent.com/25827968/28417739-74ea6522-6d59-11e7-9664-5148cd0e706a.png)
 
 ## Requirements
 
