@@ -9,7 +9,7 @@ scriptencoding utf-8
 function! s:templates_sink(templates) abort
   try
     let lines = _fzf_gitignore_create(a:templates)
-  catch /^Vim(return):/
+  catch /^Vim(\(let\|return\)):/
     return
   endtry
 
@@ -29,7 +29,7 @@ function! fzf_gitignore#run() abort
           \ 'sink*': function('s:templates_sink'),
           \ 'options': '-m --prompt="Template> " --header="gitignore.io"'
           \ }
-  catch /^Vim(return):/
+  catch /^Vim(\(let\|return\)):/
     return
   endtry
 

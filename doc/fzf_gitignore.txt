@@ -1,6 +1,6 @@
 *fzf_gitignore.txt* Create useful .gitignore files for your project
 
-Author: Filip Szymański <filip.szymanski@zoho.eu>
+Author: Filip Szymański <fszymanski.free@gmail.com>
 
 ==============================================================================
 CONTENTS                                              *fzf-gitignore-contents*
