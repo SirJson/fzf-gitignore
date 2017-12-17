@@ -8,7 +8,7 @@ scriptencoding utf-8
 
 function! s:templates_sink(templates) abort
   try
-    let lines = _fzf_gitignore_create(a:templates)
+    let l:lines = _fzf_gitignore_create(a:templates)
   catch /^Vim(\(let\|return\)):/
     return
   endtry
@@ -16,7 +16,7 @@ function! s:templates_sink(templates) abort
   new
   setlocal filetype=gitignore
 
-  call append(0, lines)
+  call append(0, l:lines)
 
   $-1,$delete _
   normal! gg
@@ -24,7 +24,7 @@ endfunction
 
 function! fzf_gitignore#run() abort
   try
-    let opts = {
+    let l:opts = {
           \ 'source': _fzf_gitignore_supported_templates(),
           \ 'sink*': function('s:templates_sink'),
           \ 'options': '-m --prompt="Template> " --header="gitignore.io"'
@@ -33,9 +33,8 @@ function! fzf_gitignore#run() abort
     return
   endtry
 
-  call extend(opts, get(g:, 'fzf_layout', {'down': '~40%'}))
-
-  call fzf#run(opts)
+  call extend(l:opts, get(g:, 'fzf_layout', {'down': '~40%'}))
+  call fzf#run(l:opts)
 endfunction
 
 " vim: ts=2 et sw=2
