@@ -33,8 +33,7 @@ function! fzf_gitignore#run() abort
     return
   endtry
 
-  call extend(l:opts, get(g:, 'fzf_layout', {'down': '~40%'}))
-  call fzf#run(l:opts)
+  call fzf#run(fzf#wrap(l:opts))
 endfunction
 
 " vim: ts=2 et sw=2
