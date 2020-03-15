@@ -1,4 +1,4 @@
-# Copyright (c) 2017 Filip Szymański. All rights reserved.
+# Copyright (c) 2017-2020 Filip Szymański. All rights reserved.
 # Use of this source code is governed by an MIT license that can be
 # found in the LICENSE file.
 
@@ -7,15 +7,15 @@ import socket
 import urllib.error
 import urllib.request
 
-import neovim
+import pynvim
 
-__version__ = '1.0'
+__version__ = '1.1'
 
 API_URL = 'https://www.gitignore.io/api/{}'
 USER_AGENT = 'fzf-gitignore/{} (https://github.com/fszymanski/fzf-gitignore)'.format(__version__)
 
 
-@neovim.plugin
+@pynvim.plugin
 class FzfGitignore():
     def __init__(self, nvim):
         self.__cache = None
@@ -48,15 +48,15 @@ class FzfGitignore():
             self.__error('Connection timed out: {}: {}'.format(err, req.get_full_url()))
             raise
 
-    @neovim.function('_fzf_gitignore_supported_templates', sync=True)
-    def supported_templates(self, args):  # pylint: disable=W0613
+    @pynvim.function('_fzf_gitignore_supported_templates', sync=True)
+    def supported_templates(self, args):
         if self.__cache is None:
             data = self.__pattern.sub(',', self.__fetch('list'))
             self.__cache = data.split(',')
 
         return self.__cache
 
-    @neovim.function('_fzf_gitignore_create', sync=True)
+    @pynvim.function('_fzf_gitignore_create', sync=True)
     def create(self, args):
         data = self.__fetch(','.join(args[0]))
         return data.split('\n')
