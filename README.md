@@ -7,24 +7,24 @@ This plugin was inspired by [helm-gitignore](https://github.com/jupl/helm-gitign
 
 ## Requirements
 
-* [Neovim](https://neovim.io/)
-* [python-client](https://github.com/neovim/python-client)
+* [Nvim](https://neovim.io/)
+* [pynvim](https://github.com/neovim/pynvim)
 * fzf
 
 ## Installation
 
-1. Install Neovim python client.
+1. Install Nvim python client.
 
     ```sh
-    pip3 install --upgrade neovim
+    pip3 install --upgrade pynvim
     ```
 
-2. Use your favorite Neovim plugin manager to install `fzf-gitignore`.
+2. Use your favorite Nvim plugin manager to install `fzf-gitignore`.
 
     **Using [vim-plug](https://github.com/junegunn/vim-plug)**
 
     ```vim
-    Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+    Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
     Plug 'fszymanski/fzf-gitignore', {'do': ':UpdateRemotePlugins'}
     ```
 
