@@ -23,7 +23,7 @@ class FzfGitignore():
         self.newline_re = re.compile(r'\n')
 
     def error(self, msg):
-        self.__nvim.command(
+        self.nvim.command(
             'echohl ErrorMsg | echomsg "[fzf-gitignore] {}" | echohl None'.format(msg))
 
     def fetch(self, params):
