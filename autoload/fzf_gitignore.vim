@@ -11,7 +11,7 @@ function! s:template_sink(templates) abort
     return
   endtry
 
-  new
+  edit .gitignore
   setlocal filetype=gitignore
 
   call setline(1, l:lines)
