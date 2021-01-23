@@ -14,7 +14,7 @@ function! s:template_sink(templates) abort
   edit .gitignore
   setlocal filetype=gitignore
 
-  call setline(1, l:lines)
+  call append(line('$'), l:lines)
 
   $-2,$delete _
   normal! gg
